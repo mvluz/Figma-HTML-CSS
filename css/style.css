@@ -45,11 +45,18 @@ button,
 main {
     height: 100%;
     display: grid;
+    /* Para usar grid*/
     grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px)) minmax(60px, 1fr);
+    /* configuração dos grids*/
+    /* A esquerda: valor mínimo e máximo espaço em branco || repetir 6 vezes val. min. max. colunas || A direita: val. min. max. */
+    /* 1fr calcula o valor restante para ocupar */
+    /* 190px * 6 = 1140px tamanha max. das 6 colunas definidas  */
+    /* embora seja definida 6 colunas para o conteudo foi definido 8 , 6 mais 2 espaça a direita e a esquerda*/
 }
 
 header {
     grid-column: 2 / span 6;
+    /*conteudo começa na 2 coluna onde estão as 6 colunas de conteudo definadas*/
 }
 
 nav {
@@ -60,11 +67,13 @@ nav {
 
 .links {
     margin-left: auto;
+    /*ocupa todo o espaço da esquerda, alinha a direita*/
 }
 
 .links a,
 .links button {
     font-size: 1.0625rem;
+    /* =17px https://www.ninjaunits.com/converters/pixels/pixels-rem/*/
     font-weight: 400;
     transition: var(--trasition);
 }
@@ -80,7 +89,7 @@ nav {
 .button__med {
     border: none;
     background-color: var(--accent);
-    padding: 8px 25;
+    padding: 8px 25px;
     transition: var(--trasition);
 }
 
@@ -111,4 +120,97 @@ nav {
 
 .icon__info {
     margin: 0 80px 0 20px;
+}
+
+.icon__top {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.icon__bottom {
+    font-size: 1.5625rem;
+    font-weight: 700;
+}
+
+.features {
+    grid-column: 2 / span 7;
+    background-color: var(--dark80);
+    align-self: flex-end;
+    padding: 40px 0 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.feature {
+    display: flex;
+    margin: 0 60px 40px 0;
+}
+
+.feature:nth-child(3) {
+    align-self: flex-start;
+}
+
+.feature img {
+    height: 100px;
+    margin-right: 20px;
+}
+
+.feature__info {
+    margin-top: 10px;
+}
+
+.feature__top,
+.feature__cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.feature__cta {
+    cursor: pointer;
+    transition: var(--trasition);
+}
+
+.feature__cta:hover {
+    color: var(--accent);
+}
+
+.feature__bottom {
+    width: 180px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 1100px) {
+    .icon img {
+        height: 55px;
+        width: auto;
+    }
+    .icon__top {
+        font-size: 1rem;
+    }
+    .icon__bottom {
+        font-size: 1.125rem;
+    }
+    .hero__font {
+        font-size: 2.1875rem;
+    }
+    .features {
+        grid-column: 1 / span 8;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .info {
+        grid-column: 2 / span 6;
+    }
+    .icons {
+        flex-direction: column;
+    }
+    .icon {
+        margin-bottom: 20px;
+    }
 }

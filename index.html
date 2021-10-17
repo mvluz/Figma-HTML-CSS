@@ -13,14 +13,24 @@
 <body>
     <main>
         <header>
-            <nav><img src="img/logo.svg" alt="logo">
+            <nav>
+                <img src="img/logo.svg" alt="logo">
                 <div class="links">
                     <a href="#">About</a>
                     <a href="#">Docs</a>
                     <button class="button__med" href="#">Login</button>
+                </div>
+                <button onclick="openNav()" class="button__med menu" href="#">Menu</button>
             </nav>
-            </div>
         </header>
+        <div id="mobile__menu" class="overlay">
+            <a class="close" onclick="closeNav()" href="#">&times;</a>
+            <div class="overlay__content">
+                <a href="#">About</a>
+                <a href="#">Docs</a>
+                <a href="#">Login</a>
+            </div>
+        </div>
         <section class="info">
             <h1 class="hero__font">Real-time itineraries powered by location AI</h1>
             <div class="icons">
@@ -69,6 +79,7 @@
             </div>
         </section>
     </main>
+    <script type="text/javascript" src="js/mobile.js"></script>
 </body>
 
 </html>

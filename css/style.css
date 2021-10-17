@@ -14,6 +14,7 @@
     --dark60: rgba(48, 70, 89, .6);
     --light: #F5F9FC;
     --trasition: all 0.3s ease 0s;
+    --trasitionSlow: all 0.5s ease 0s;
 }
 
 * {
@@ -30,8 +31,8 @@ body {
 }
 
 body {
-    background: -webkit-gradient( linear, left top, left bottom, from(var(--dark60)), to(var(--dark60))), url(/img/background.jpg);
     background: -o-linear-gradient( var(--dark60), var(--dark60)), url(/img/background.jpg);
+    background: -webkit-gradient( linear, left top, left bottom, from(var(--dark60)), to(var(--dark60))), url(/img/background.jpg);
     background: linear-gradient( var(--dark60), var(--dark60)), url(/img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -50,6 +51,11 @@ a,
 button,
 .logo {
     cursor: pointer;
+}
+
+.menu {
+    display: none;
+    margin-left: auto;
 }
 
 main {
@@ -263,5 +269,79 @@ nav {
     }
     .icon {
         margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    nav>.links {
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+}
+
+
+/* Mobile Nav*/
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: var(--dark80);
+    overflow-x: hidden;
+    -webkit-transition: var(--trasitionSlow);
+    -o-transition: var(--trasitionSlow);
+    transition: var(--trasitionSlow);
+}
+
+.overlay__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.overlay a {
+    padding: 15px;
+    font-size: 2.25rem;
+    display: block;
+    -webkit-transition: var(--trasition);
+    -o-transition: var(--trasition);
+    transition: var(--trasition);
+}
+
+.overlay a:hover {
+    color: var(--accent)
+}
+
+.overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 3.75rem;
+}
+
+@media only screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 1.25rem;
+    }
+    .overlay .close {
+        font-size: 2.5rem;
+        top: 15px;
+        right: 35px;
     }
 }

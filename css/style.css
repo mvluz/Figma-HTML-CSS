@@ -31,9 +31,9 @@ body {
 }
 
 body {
-    background: -o-linear-gradient( var(--dark60), var(--dark60)), url(img/background.jpg);
-    background: -webkit-gradient( linear, left top, left bottom, from(var(--dark60)), to(var(--dark60))), url(img/background.jpg);
-    background: linear-gradient( var(--dark60), var(--dark60)), url(img/background.jpg);
+    background: -o-linear-gradient( var(--dark60), var(--dark60)), url(../img/background.jpg);
+    background: -webkit-gradient( linear, left top, left bottom, from(var(--dark60)), to(var(--dark60))), url(../img/background.jpg);
+    background: linear-gradient( var(--dark60), var(--dark60)), url(../img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

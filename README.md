@@ -7,4 +7,4 @@
 
 Added mobile menu from [_Skillthrive channel_ - Video: Sidebar Menu Animation with JavaScript / CSS / HTML](https://www.youtube.com/watch?v=WxQZsN6LICM)
 
-✅ Watch this clone alive! [Here](https://marcus.place/Figma-HTML-CSS/)
+✅ Watch this clone live! [Here](https://marcus.place/Figma-HTML-CSS/)
